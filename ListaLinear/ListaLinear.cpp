@@ -98,6 +98,7 @@ void inserirElemento()
 {
 	int pos;
 	int valor;
+	
 	if (nElementos < MAX) {
 		cout << "Digite o elemento: ";
 		cin >> valor;
@@ -105,7 +106,7 @@ void inserirElemento()
 
 		if (pos != -1)
 		{
-			cout << "Elemento já esta na lista" << endl;
+			cout << "Elemento jÃ¡ esta na lista" << endl;
 		}
 		else
 		{
@@ -122,8 +123,23 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int NumDelete, pos;
+	cout << "Digite o numero que deseja deletar: ";
+	cin >> NumDelete;
+	pos = posicaoElemento(NumDelete);
 
+	if (pos != -1)
+	{
+		for (int n = pos; n < nElementos - 1; n++) {
+			lista[n] = lista[n + 1];
 
+		}
+		nElementos = nElementos - 1;
+	}
+	else
+	{
+		cout << "Numero nao encontrada!";
+	}
 }
 
 void buscarElemento()
